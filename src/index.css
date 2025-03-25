@@ -1,0 +1,49 @@
+/* Importation de la police "Source Sans Pro" depuis Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap");
+
+*{
+  text-decoration: none;
+}
+
+
+html,
+body,
+#root,
+.app,
+.content {
+  /* Assure que ces éléments occupent toute la largeur et la hauteur de la page */
+  height: 100%;
+  width: 100%;
+
+  /* Applique la police "Source Sans Pro" à tout le contenu */
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.app {
+  /* Active Flexbox pour organiser les éléments enfants */
+  display: flex;
+
+  /* Permet aux éléments enfants positionnés en absolute de se référer à .app */
+  position: relative;
+}
+
+/* Personnalisation de la barre de défilement pour les navigateurs WebKit (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  /* Définit la largeur de la barre de défilement */
+  width: 10px;
+}
+
+/* Style de la piste de la barre de défilement (fond de la scrollbar) */
+::-webkit-scrollbar-track {
+  background: #e0e0e0; /* Couleur de fond gris clair */
+}
+
+/* Style du curseur de la barre de défilement (partie mobile) */
+::-webkit-scrollbar-thumb {
+  background: #888; /* Couleur gris moyen */
+}
+
+/* Change la couleur du curseur quand la souris passe dessus */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Couleur plus foncée pour une meilleure visibilité */
+}
