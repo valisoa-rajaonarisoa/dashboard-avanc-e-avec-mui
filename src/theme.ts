@@ -203,7 +203,7 @@ export const ColorModeContext = createContext<{ toggleColorMode: () => void } | 
 export const useMode = () => {
   // 🎨 3. Création d'un état `mode` avec "dark" comme valeur initiale
   // `setMode` permet de modifier cette valeur plus tard
-  const [mode, setMode] = useState<PaletteMode>("dark");
+  const [mode, setMode] = useState<PaletteMode>("light");
 
   // 🔄 4. Création d'un objet contenant la fonction pour basculer entre "light" et "dark"
   const colorMode = useMemo(

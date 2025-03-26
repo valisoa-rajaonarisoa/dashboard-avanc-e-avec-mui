@@ -1,8 +1,169 @@
 {
-  "hash": "dd6e6b82",
+  "hash": "eb16edde",
   "configHash": "845526bc",
-  "lockfileHash": "e3b0c442",
-  "browserHash": "ae24b75e",
-  "optimized": {},
-  "chunks": {}
+  "lockfileHash": "7af17d3e",
+  "browserHash": "39c8923b",
+  "optimized": {
+    "react/jsx-dev-runtime": {
+      "src": "../../node_modules/react/jsx-dev-runtime.js",
+      "file": "react_jsx-dev-runtime.js",
+      "fileHash": "f74c743c",
+      "needsInterop": true
+    },
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "b26f7d26",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "f15c2767",
+      "needsInterop": true
+    },
+    "react-router-dom": {
+      "src": "../../node_modules/react-router-dom/dist/index.js",
+      "file": "react-router-dom.js",
+      "fileHash": "49ee4487",
+      "needsInterop": false
+    },
+    "@emotion/react": {
+      "src": "../../node_modules/@emotion/react/dist/emotion-react.browser.development.esm.js",
+      "file": "@emotion_react.js",
+      "fileHash": "9164e1b0",
+      "needsInterop": false
+    },
+    "@mui/material": {
+      "src": "../../node_modules/@mui/material/index.js",
+      "file": "@mui_material.js",
+      "fileHash": "46b4d6c7",
+      "needsInterop": false
+    },
+    "@mui/material/styles": {
+      "src": "../../node_modules/@mui/material/styles/index.js",
+      "file": "@mui_material_styles.js",
+      "fileHash": "9f699419",
+      "needsInterop": false
+    },
+    "@mui/icons-material/LightModeOutlined": {
+      "src": "../../node_modules/@mui/icons-material/esm/LightModeOutlined.js",
+      "file": "@mui_icons-material_LightModeOutlined.js",
+      "fileHash": "a35945a4",
+      "needsInterop": false
+    },
+    "@mui/icons-material/DarkModeOutlined": {
+      "src": "../../node_modules/@mui/icons-material/esm/DarkModeOutlined.js",
+      "file": "@mui_icons-material_DarkModeOutlined.js",
+      "fileHash": "1e464911",
+      "needsInterop": false
+    },
+    "@mui/icons-material/NotificationsOutlined": {
+      "src": "../../node_modules/@mui/icons-material/esm/NotificationsOutlined.js",
+      "file": "@mui_icons-material_NotificationsOutlined.js",
+      "fileHash": "b63766b5",
+      "needsInterop": false
+    },
+    "@mui/icons-material/SettingsOutlined": {
+      "src": "../../node_modules/@mui/icons-material/esm/SettingsOutlined.js",
+      "file": "@mui_icons-material_SettingsOutlined.js",
+      "fileHash": "5abaa625",
+      "needsInterop": false
+    },
+    "@mui/icons-material/PersonOutlined": {
+      "src": "../../node_modules/@mui/icons-material/esm/PersonOutlined.js",
+      "file": "@mui_icons-material_PersonOutlined.js",
+      "fileHash": "39c628f9",
+      "needsInterop": false
+    },
+    "@mui/icons-material/MenuOutlined": {
+      "src": "../../node_modules/@mui/icons-material/esm/MenuOutlined.js",
+      "file": "@mui_icons-material_MenuOutlined.js",
+      "fileHash": "925ea7f6",
+      "needsInterop": false
+    },
+    "@mui/icons-material/Search": {
+      "src": "../../node_modules/@mui/icons-material/esm/Search.js",
+      "file": "@mui_icons-material_Search.js",
+      "fileHash": "e0ebc544",
+      "needsInterop": false
+    },
+    "react-pro-sidebar": {
+      "src": "../../node_modules/react-pro-sidebar/dist/index.es.js",
+      "file": "react-pro-sidebar.js",
+      "fileHash": "7b20df90",
+      "needsInterop": false
+    },
+    "@mui/icons-material/SwitchRightOutlined": {
+      "src": "../../node_modules/@mui/icons-material/esm/SwitchRightOutlined.js",
+      "file": "@mui_icons-material_SwitchRightOutlined.js",
+      "fileHash": "3c9c7df8",
+      "needsInterop": false
+    },
+    "@mui/icons-material/SwitchLeftOutlined": {
+      "src": "../../node_modules/@mui/icons-material/esm/SwitchLeftOutlined.js",
+      "file": "@mui_icons-material_SwitchLeftOutlined.js",
+      "fileHash": "2d28a9d0",
+      "needsInterop": false
+    },
+    "@mui/icons-material/CloseOutlined": {
+      "src": "../../node_modules/@mui/icons-material/esm/CloseOutlined.js",
+      "file": "@mui_icons-material_CloseOutlined.js",
+      "fileHash": "bb8b9b1d",
+      "needsInterop": false
+    },
+    "@mui/icons-material/HomeOutlined": {
+      "src": "../../node_modules/@mui/icons-material/esm/HomeOutlined.js",
+      "file": "@mui_icons-material_HomeOutlined.js",
+      "fileHash": "890b3316",
+      "needsInterop": false
+    },
+    "@mui/icons-material/PeopleOutlined": {
+      "src": "../../node_modules/@mui/icons-material/esm/PeopleOutlined.js",
+      "file": "@mui_icons-material_PeopleOutlined.js",
+      "fileHash": "f6b1d71c",
+      "needsInterop": false
+    },
+    "@mui/icons-material/ContactsOutlined": {
+      "src": "../../node_modules/@mui/icons-material/esm/ContactsOutlined.js",
+      "file": "@mui_icons-material_ContactsOutlined.js",
+      "fileHash": "b3ce837d",
+      "needsInterop": false
+    },
+    "@mui/icons-material/CalendarTodayOutlined": {
+      "src": "../../node_modules/@mui/icons-material/esm/CalendarTodayOutlined.js",
+      "file": "@mui_icons-material_CalendarTodayOutlined.js",
+      "fileHash": "e8b44689",
+      "needsInterop": false
+    },
+    "@mui/icons-material/BarChartOutlined": {
+      "src": "../../node_modules/@mui/icons-material/esm/BarChartOutlined.js",
+      "file": "@mui_icons-material_BarChartOutlined.js",
+      "fileHash": "23f6b2f6",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-FPEHQ7MX": {
+      "file": "chunk-FPEHQ7MX.js"
+    },
+    "chunk-MRKQGHYD": {
+      "file": "chunk-MRKQGHYD.js"
+    },
+    "chunk-C6WWHQR7": {
+      "file": "chunk-C6WWHQR7.js"
+    },
+    "chunk-4U5AVX3J": {
+      "file": "chunk-4U5AVX3J.js"
+    },
+    "chunk-U7SPLILB": {
+      "file": "chunk-U7SPLILB.js"
+    },
+    "chunk-XKHO7RFY": {
+      "file": "chunk-XKHO7RFY.js"
+    },
+    "chunk-DDNM7ENY": {
+      "file": "chunk-DDNM7ENY.js"
+    }
+  }
 }

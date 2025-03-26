@@ -3,13 +3,13 @@ import { Menu, Sidebar, MenuItem } from "react-pro-sidebar";
 import { useProSidebar } from "react-pro-sidebar";
 import { useSidebarContext } from "./sidebarContext"; // Assure-toi que ce fichier existe et contient les bons hooks.
 import { tokens } from "../../../theme"; // Vérifie que ce fichier existe et contient la logique pour la palette de couleurs.
-import SwitchRightOutlinedIcon from "@mui/icons-material/SwitchRightOutlined";
+
 import SwitchLeftOutlinedIcon from "@mui/icons-material/SwitchLeftOutlined";
 import { Box, IconButton, Typography, useTheme } from "@mui/material";
 import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import PeopleOutlinedIcon from "@mui/icons-material/PeopleOutlined";
 import ContactsOutlinedIcon from "@mui/icons-material/ContactsOutlined";
@@ -23,25 +23,44 @@ type itemType = {
   to: string;
   icon: React.ReactNode;
   selected: string;
+  name: string;
   setSelected: React.Dispatch<React.SetStateAction<string>>;
 };
-const Item = ({ title, to, icon, selected, setSelected }: itemType) => {
+const Item = ({ title, to, icon, selected, setSelected, name }: itemType) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
+  // ************hover ************
+  const [hover, setHover] = useState(false);
+
+  const { pathname } = useLocation();
+
+  let isPageStyle=""
+
+  // ************localisation du page et hover *********
+  if(hover || pathname.split('/').includes(name)){
+    isPageStyle=colors.greenAccent[500]
+  }else if(name=="dashboard" && pathname=="/"){
+    isPageStyle=colors.greenAccent[500]
+  }else{
+    isPageStyle=colors.grey[100]
+  }
   return (
-    <Link to={to}> 
+    <Link to={to} >
       <MenuItem
         active={selected === title}
-        style={{ color: colors.grey[100] }}
+        style={{
+          color: isPageStyle,
+          background: hover ? "transparent" : "transparent",
+        }}
         onClick={() => setSelected(title)}
         icon={icon as React.ReactNode}
-        
+        onMouseEnter={() => setHover(true)}
+        onMouseLeave={() => setHover(false)}
       >
-        <Typography>{title}</Typography>
+        <Typography >{title}</Typography>
       </MenuItem>
     </Link>
-    
   );
 };
 
@@ -56,9 +75,6 @@ const MyProSidebar = () => {
 
   // ****************side-pro
   const { collapseSidebar, toggleSidebar, collapsed, broken } = useProSidebar();
-
-  const navigate=useNavigate()
-
   return (
     <Box
       // **************************position , sass
@@ -67,14 +83,29 @@ const MyProSidebar = () => {
         display: "flex",
         height: "100vh",
         top: 0,
+        bottom: 0,
         zIndex: 10000,
-        "& .sidebar": { border: "none" },
-        "& .menu-icon, & .menu-item, & .menu-anchor": {
+        "& .sidebar": {
+          border: "none",
+        },
+        "& .menu-icon": {
           backgroundColor: "transparent !important",
         },
-        "& .menu-item:hover": { color: `${colors.blueAccent[100]} !important` },
+        "& .menu-item": {
+          // padding: "5px 35px 5px 20px !important",
+          backgroundColor: "transparent !important",
+        },
+        "& .menu-anchor": {
+          color: "inherit !important",
+          backgroundColor: "transparent !important",
+        },
+        "& .menu-item:hover": {
+          color: `${colors.blueAccent[500]} !important`,
+          backgroundColor: "transparent !important",
+        },
         "& .menu-item.active": {
           color: `${colors.greenAccent[500]} !important`,
+          backgroundColor: "transparent !important",
         },
       }}
     >
@@ -90,14 +121,12 @@ const MyProSidebar = () => {
             icon={
               collapsed ? (
                 <MenuOutlinedIcon onClick={() => collapseSidebar()} />
-              ) : sidebarRTL ? (
-                <SwitchLeftOutlinedIcon
-                  onClick={() => setSidebarRTL(!sidebarRTL)}
-                />
               ) : (
-                <SwitchRightOutlinedIcon
-                  onClick={() => setSidebarRTL(!sidebarRTL)}
-                />
+                sidebarRTL && (
+                  <SwitchLeftOutlinedIcon
+                    onClick={() => setSidebarRTL(!sidebarRTL)}
+                  />
+                )
               )
             }
             style={{ margin: "10px 0 20px 0", color: colors.grey[100] }}
@@ -149,6 +178,7 @@ const MyProSidebar = () => {
             <Item
               title="Dashboard"
               to="/"
+              name="dashboard"
               icon={<HomeOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
@@ -164,6 +194,7 @@ const MyProSidebar = () => {
             <Item
               title="Manage Team"
               to="/team"
+              name="team"
               icon={<PeopleOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
@@ -171,6 +202,7 @@ const MyProSidebar = () => {
             <Item
               title="Contacts Information"
               to="/contacts"
+              name="contacts"
               icon={<ContactsOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
@@ -187,6 +219,7 @@ const MyProSidebar = () => {
             <Item
               title="Calendar"
               to="/calendar"
+              name="calendar"
               icon={<CalendarTodayOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
@@ -203,11 +236,10 @@ const MyProSidebar = () => {
             <Item
               title="Bar Chart"
               to="/bar"
+              name="bar"
               icon={<BarChartOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
-
-
             />
           </Box>
         </Menu>
