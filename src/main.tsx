@@ -8,6 +8,7 @@ import Bar from './pages/bar/Bar.tsx'
 import Team from './pages/team/Team.tsx'
 import Calendar from './pages/calendar/Calendar.tsx'
 import Contacts from './pages/contacts/Contacts.tsx'
+import Faq from './pages/faq/Faq.tsx'
 const route=createBrowserRouter([
   {
     path:"/",
@@ -33,6 +34,10 @@ const route=createBrowserRouter([
       {
         path:"/contacts",
         element:<Contacts/>
+      },
+      {
+        path:"/faq",
+        element:<Faq/>
       }
     ]
   },

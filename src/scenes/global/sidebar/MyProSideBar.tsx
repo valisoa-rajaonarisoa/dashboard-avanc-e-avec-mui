@@ -13,7 +13,7 @@ import { Link, useLocation } from "react-router-dom";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import PeopleOutlinedIcon from "@mui/icons-material/PeopleOutlined";
 import ContactsOutlinedIcon from "@mui/icons-material/ContactsOutlined";
-
+import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
 import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined";
 
 import BarChartOutlinedIcon from "@mui/icons-material/BarChartOutlined";
@@ -238,6 +238,17 @@ const MyProSidebar = () => {
               to="/bar"
               name="bar"
               icon={<BarChartOutlinedIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+
+
+
+            <Item
+              title="FAQ Page"
+              to="/faq"
+              name="faq"
+              icon={<HelpOutlineOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
