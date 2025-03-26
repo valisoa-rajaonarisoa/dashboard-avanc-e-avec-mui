@@ -1,22 +1,81 @@
-import { Box } from "@mui/material"
-import Headers from "../../components/Headers"
 
-type Props = {}
+import { Box, useTheme } from "@mui/material";
+import { DataGrid, GridToolbar } from "@mui/x-data-grid";
+import { tokens } from "../../theme";
+import { mockDataContacts } from "../../data/mockData";
+import Headers from "../../components/Headers";
 
-const Contacts = ({}: Props) => {
+
+
+const Contacts = () => {
+  const theme = useTheme();
+  const colors = tokens(theme.palette.mode);
+  const columns = [
+    { field: "id", headerName: "Id", width: 100 },
+    { field: "registrarId", headerName: "Registrar Id", width: 100 },
+    {
+      field: "name",
+      headerName: "Name",
+      cellClassName: "name-column--cell",
+      width: 200,
+    },
+    {
+      field: "age",
+      headerName: "Age",
+      width: 100,
+    },
+    { field: "phone", headerName: "Phone Number", width: 100 },
+    { field: "email", headerName: "Email", width: 200 },
+    { field: "address", headerName: "Address", width: 250 },
+    { field: "city", headerName: "City", width: 100 },
+    { field: "zipCode", headerName: "Zip Code", width: 100 },
+  ];
   return (
-    // on oublie pas de mttre la margin 20 px , comme une sorte de padding
-    <Box sx={{ margin: "20px" }}> 
-      <Headers title="CONTACTS" subtitle="Welcome to your contacts" />
-
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus rerum
-        qui tempore delectus ut! Quos distinctio vero hic velit. Maiores nam,
-        earum, non tenetur ut perferendis, et neque esse accusantium sunt
-        tempore laborum odio praesentium illum ab maxime odit nemo!
-      </p>
+    <Box m="20px">
+      <Box display="flex" justifyContent="space-between" alignItems="center">
+        <Headers title="CONTACTS" subtitle="welcome to you Contacts" />
+      </Box>
+      <Box
+        m="8px 0 0 0"
+        width="100%"
+        height="80vh"
+        sx={{
+          "& .MuiDataGrid-root": {
+            border: "none",
+          },
+          "& .MuiDataGrid-cell": {
+            borderBottom: "none",
+          },
+          "& .name-column--cell": {
+            color: colors.greenAccent[300],
+          },
+          "& .MuiDataGrid-columnHeaders": {
+            backgroundColor: colors.blueAccent[700],
+            borderBottom: "none",
+          },
+          "& .MuiDataGrid-virtualScroller": {
+            backgroundColor: colors.primary[400],
+          },
+          "& .MuiDataGrid-footerContainer": {
+            borderTop: "none",
+            backgroundColor: colors.blueAccent[700],
+          },
+          "& .MuiCheckbox-root": {
+            color: `${colors.greenAccent[200]} !important`,
+          },
+          "& .MuiDataGrid-toolbarContainer .MuiButton-text": {
+            color: `${colors.grey[100]} !important`,
+          },
+        }}
+      >
+        <DataGrid
+          rows={mockDataContacts}
+          columns={columns}
+          slots={{ toolbar: GridToolbar }}
+        />
+      </Box>
     </Box>
-  )
-}
+  );
+};
 
-export default Contacts
+export default Contacts;

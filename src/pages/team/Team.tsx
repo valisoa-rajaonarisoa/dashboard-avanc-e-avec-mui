@@ -1,7 +1,7 @@
 import { Box, IconButton, Typography, useTheme } from "@mui/material";
 import Headers from "../../components/Headers";
 import { tokens } from "../../theme";
-import { DataGrid } from "@mui/x-data-grid";
+import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { mockDataTeam } from "../../data/mockData";
 import AdminPanelSettingsOutlinedIcon from "@mui/icons-material/AdminPanelSettingsOutlined";
 import LockOpenOutlinedIcon from "@mui/icons-material/LockOpenOutlined";
@@ -159,9 +159,24 @@ const Team = ({}: Props) => {
           "& .MuiDataGrid-virtualScroller": {
             backgroundColor: colors.primary[400],
           },
+
+
+
+          // *************footer***********************
           "& .MuiDataGrid-footerContainer": {
             borderTop: "none",
             backgroundColor: colors.greenAccent[600],
+            
+          },
+
+          "& .MuiDataGrid-footerContainer p": {
+           
+            fontSize:"15px"
+          },
+
+          "& .MuiDataGrid-footerContainer div": {
+           
+            fontSize:"15px"
           },
           "& .class-access": {
             display: "flex !important",
@@ -169,6 +184,22 @@ const Team = ({}: Props) => {
             fontSize: "16px",
             borderBottom: "none",
             border: "none",
+          },
+
+
+          // ****************header*******************
+          "& .MuiDataGrid-topCantainer": {
+            backgroundColor:"yellow"
+          },
+
+
+          // ****************tool bar le filter *****************
+          "& .MuiDataGrid-toolbarContainer": {
+           
+          },
+
+          "& .MuiDataGrid-toolbarContainer button ": {
+            color:colors.grey[100]
           },
         }}
       >
@@ -185,6 +216,10 @@ const Team = ({}: Props) => {
               outline: "none", // Supprimer le focus par défaut
             },
           }}
+
+
+          // **************tooolbar filter *******************
+          slots={{ toolbar: GridToolbar }}
         />
       </Box>
     </Box>
